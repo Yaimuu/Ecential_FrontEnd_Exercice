@@ -1,0 +1,18 @@
+
+<h1>3D view</h1>
+<canvas #canvasviewer width="512" height="512" 
+    (scroll)="onScroll" 
+    (mousedown)="onMouseDown($event)" 
+    (mouseup)="onMouseUp($event)"
+    (mouseleave)="onMouseUp($event)"></canvas>
+
+<div>
+    <label for="transparency">Transparency</label>
+    <input type="range" min="0" max="100" name="transparency" [(ngModel)]="transparencyValue" (input)="transparencyChange(transparencyValue)"/>
+    {{transparencyValue}}%
+    <br/>
+    <label for="display">Faces</label>
+    <input type="checkbox" id="display-check" name="display" [(ngModel)]="toggle" (change)="displayToggle(toggle)"/>
+</div>
+
+
